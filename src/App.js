@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { getPhrases } from "./utils/api";
+import { Flashcard } from "./components/Flashcard";
+import { AddPhrase } from "./components/AddPhrase";
 
 function App() {
+  const [phrases, setPhrases] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    getPhrases().then(({ phrases }) => {
+      setPhrases(phrases);
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) return <p>loading</p>;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>English-Thai Flashcards</h1>
+      <Flashcard phrases={phrases} />
+      <AddPhrase setPhrases={setPhrases} />
     </div>
   );
 }
