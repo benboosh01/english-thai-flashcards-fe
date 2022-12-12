@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { getPhrases } from "./utils/api";
 import { Flashcard } from "./components/Flashcard";
 import { AddPhrase } from "./components/AddPhrase";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Phrases } from "./components/Phrases";
+import { MainNav } from "./components/MainNav";
 
 function App() {
   const [phrases, setPhrases] = useState([]);
@@ -19,9 +23,22 @@ function App() {
   if (loading) return <p>loading</p>;
   return (
     <div className="App">
-      <h1>English-Thai Flashcards</h1>
-      <Flashcard phrases={phrases} />
-      <AddPhrase setPhrases={setPhrases} />
+      <h1>English-Thai Phrases</h1>
+      <MainNav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/flashcards" element={<Flashcard phrases={phrases} />} />
+        <Route
+          path="/phrases"
+          element={
+            <>
+              <Phrases phrases={phrases} />
+              <AddPhrase setPhrases={setPhrases} />
+            </>
+          }
+        />
+      </Routes>
+      <footer className="footer"></footer>
     </div>
   );
 }
