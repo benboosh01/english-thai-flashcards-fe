@@ -1,38 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+NP+Hmong&display=swap');
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+  font-family: 'Noto Serif NP Hmong', serif;
+}
+
+h1 {
+  padding: 25px 10px;
+  margin: 0;
+  background-color: #155263;
+  color: #ffc93c;
+}
+
+.main-nav {
+  background-color: #ffc93c;
+  padding: 20px 0;
+}
+
+.nav-list {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #155263;
+  color: #ffc93c;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-link:hover {
+  background-color: #1d6f85;
+}
+
+.flashcard-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 15px;
+}
+
+.flashcard {
+  height: 150px;
+  width: 350px;
+  font-size: 2em;
+  white-space: normal; 
+  border: none;
+  border-radius: 10px;
+  background-color: #ff9a3c;
+}
+
+.app-button {
+  width: 220px;
+  height: 70px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  font-size: 1.1em;
+  background-color: #ffc93c;
+  color:#155263;;
+}
+
+.add-phrase-section {
+  padding: 0 15px;
+  max-width: 375px;
+  margin: 0 auto 20px;
+}
+
+.add-phrase-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-phase-text {
+  min-width: 350px;
+}
+
+.footer {
+  height: 100px;
+  background-color: #155263;
+  margin-top: 20px;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.phrases-section {
+  padding: 20px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.phrases-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.phrase-card {
+  display: flex;
+  flex-direction: column;
+  border: #155263 solid;
+  border-radius: 15px;
+  width: 350px;
+  padding: 5px;
+}
+
+.phrase-item {
+  padding: 5px;
+}
+
+@media (min-width: 576px) {
+  .phrases-section {
+    max-width: 1200px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .phrases-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
