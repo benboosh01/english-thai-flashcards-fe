@@ -4,7 +4,6 @@ import { getPhrases } from "./utils/api";
 import { Flashcard } from "./components/Flashcard";
 import { AddPhrase } from "./components/AddPhrase";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/Home";
 import { Phrases } from "./components/Phrases";
 import { MainNav } from "./components/MainNav";
 
@@ -26,10 +25,9 @@ function App() {
       <h1>English-Thai Phrases</h1>
       <MainNav />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/flashcards" element={<Flashcard phrases={phrases} />} />
         <Route
-          path="/phrases"
+          path="/"
           element={
             <>
               <Phrases phrases={phrases} />

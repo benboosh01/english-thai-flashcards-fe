@@ -15,6 +15,18 @@ h1 {
   color: #ffc93c;
 }
 
+.home-section {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  padding: 20px 0;
+  font-size: 1.6em;
+  max-width: 768px;
+  margin: auto;
+}
+
 .main-nav {
   background-color: #ffc93c;
   padding: 20px 0;

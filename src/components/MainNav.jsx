@@ -10,7 +10,7 @@ export const MainNav = () => {
     <nav className="main-nav">
       <ul className="nav-list">
         <NavLink
-          to="/phrases"
+          to="/"
           className="nav-link"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
