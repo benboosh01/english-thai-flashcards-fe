@@ -12,26 +12,50 @@ export const Flashcard = ({ phrases }) => {
   };
 
   return (
-    <section>
-      <button
-        onClick={() => {
-          setShowEng(!showEng);
-        }}
-      >
-        Show English
-      </button>
-      {showEng ? <p>{phrases[randomNum].english}</p> : null}
+    <section className="flashcard-section">
+      {showEng ? (
+        <input
+          type="button"
+          onClick={() => {
+            setShowEng(!showEng);
+          }}
+          value={phrases[randomNum].english}
+          className="flashcard"
+        />
+      ) : (
+        <input
+          type="button"
+          onClick={() => {
+            setShowEng(!showEng);
+          }}
+          value="Show English"
+          className="flashcard"
+        />
+      )}
 
-      <button
-        onClick={() => {
-          setShowThai(!showThai);
-        }}
-      >
-        Show Thai
-      </button>
-      {showThai ? <p>{phrases[randomNum].thai}</p> : null}
+      {showThai ? (
+        <input
+          type="button"
+          onClick={() => {
+            setShowThai(!showThai);
+          }}
+          value={phrases[randomNum].thai}
+          className="flashcard"
+        />
+      ) : (
+        <input
+          type="button"
+          onClick={() => {
+            setShowThai(!showThai);
+          }}
+          value="Show Thai"
+          className="flashcard"
+        />
+      )}
 
-      <button onClick={generateNumber}>Generate New Phrase</button>
+      <button onClick={generateNumber} className="app-button">
+        Generate New Phrase
+      </button>
     </section>
   );
 };

@@ -21,44 +21,57 @@ export const AddPhrase = ({ setPhrases }) => {
         return [...currPhases, res.phrase];
       });
     });
+    setEnglish("");
+    setThai("");
     setDisable(false);
     setVisible(false);
   };
 
   return (
-    <section>
-      <button
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        Add Phrase
-      </button>
+    <section className="add-phrase-section">
       {visible ? (
-        <form onSubmit={submitPhrase}>
+        <form onSubmit={submitPhrase} className="add-phrase-form">
           <label htmlFor="english">English</label>
-          <input
+          <textarea
+            className="add-phase-text"
             id="english"
-            type="text"
+            type="textarea"
             value={english}
             onChange={(e) => {
               setEnglish(e.target.value);
             }}
             placeholder="Enter english phrase"
-          ></input>
+            rows={5}
+          />
           <label htmlFor="thai">Thai</label>
-          <input
+          <textarea
+            className="add-phase-text"
             id="thai"
-            type="text"
+            type="textarea"
             value={thai}
             onChange={(e) => {
               setThai(e.target.value);
             }}
             placeholder="Enter thai phrase"
-          ></input>
-          <input type="submit" value="Submit Phrase" disabled={disable} />
+            rows={5}
+          />
+          <input
+            type="submit"
+            value="Submit Phrase"
+            disabled={disable}
+            className="app-button"
+          />
         </form>
-      ) : null}
+      ) : (
+        <button
+          onClick={() => {
+            setVisible(!visible);
+          }}
+          className="app-button"
+        >
+          Add Phrase
+        </button>
+      )}
     </section>
   );
 };
