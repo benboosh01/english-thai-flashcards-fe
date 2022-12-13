@@ -70,7 +70,11 @@ h2 {
   white-space: normal; 
   border: none;
   border-radius: 10px;
-  background-color: #ff9a3c;
+  border: black solid 1px;
+}
+
+.flash-flag {
+  margin: 0 auto;
 }
 
 .app-button {
