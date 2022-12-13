@@ -66,11 +66,12 @@ h2 {
 .flashcard {
   height: 150px;
   width: 350px;
-  font-size: 2em;
+  font-size: 1.5em;
   white-space: normal; 
   border: none;
   border-radius: 10px;
   border: black solid 1px;
+  color: black;
 }
 
 .flash-flag {
