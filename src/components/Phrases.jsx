@@ -6,7 +6,8 @@ export const Phrases = ({ phrases }) => {
           return (
             <li key={phrase.id} className="phrase-card">
               <p className="phrase-item">English: {phrase.english}</p>
-              <p className="phrase-item">Thai: {phrase.thai}</p>
+              <p className="phrase-item">Thai Script: {phrase.thai_script}</p>
+              <p className="phrase-item">Thai Latin: {phrase.thai_latin}</p>
             </li>
           );
         })}

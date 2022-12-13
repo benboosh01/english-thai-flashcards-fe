@@ -4,7 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 
 export const AddPhrase = ({ setPhrases }) => {
   const [english, setEnglish] = useState("");
-  const [thai, setThai] = useState("");
+  const [thaiScript, setThaiScript] = useState("");
+  const [thaiLatin, setThaiLatin] = useState("");
+  const [category, setCategory] = useState("");
   const [visible, setVisible] = useState(false);
   const [disable, setDisable] = useState(false);
 
@@ -14,7 +16,9 @@ export const AddPhrase = ({ setPhrases }) => {
     const newPhrase = {
       id: uuidv4(),
       english: english,
-      thai: thai,
+      thai_script: thaiScript,
+      thai_latin: thaiLatin,
+      category: category,
     };
     addPhrase(newPhrase).then((res) => {
       setPhrases((currPhases) => {
@@ -22,7 +26,8 @@ export const AddPhrase = ({ setPhrases }) => {
       });
     });
     setEnglish("");
-    setThai("");
+    setThaiScript("");
+    setThaiLatin("");
     setDisable(false);
     setVisible(false);
   };
@@ -41,19 +46,43 @@ export const AddPhrase = ({ setPhrases }) => {
               setEnglish(e.target.value);
             }}
             placeholder="Enter english phrase"
-            rows={5}
+            rows={2}
           />
-          <label htmlFor="thai">Thai</label>
+          <label htmlFor="thai-script">Thai Script</label>
           <textarea
             className="add-phase-text"
-            id="thai"
+            id="thai-script"
             type="textarea"
-            value={thai}
+            value={thaiScript}
             onChange={(e) => {
-              setThai(e.target.value);
+              setThaiScript(e.target.value);
             }}
             placeholder="Enter thai phrase"
-            rows={5}
+            rows={2}
+          />
+          <label htmlFor="thai-latin">Thai Latin</label>
+          <textarea
+            className="add-phase-text"
+            id="thai-latin"
+            type="textarea"
+            value={thaiLatin}
+            onChange={(e) => {
+              setThaiLatin(e.target.value);
+            }}
+            placeholder="Enter thai phrase"
+            rows={2}
+          />
+          <label htmlFor="category">Category</label>
+          <textarea
+            className="add-phase-text"
+            id="category"
+            type="textarea"
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+            placeholder="Enter thai phrase"
+            rows={1}
           />
           <input
             type="submit"

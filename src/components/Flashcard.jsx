@@ -23,14 +23,19 @@ export const Flashcard = ({ phrases }) => {
           className="flashcard"
         />
       ) : (
-        <input
+        <button
           type="button"
           onClick={() => {
             setShowEng(!showEng);
           }}
-          value="Show English"
           className="flashcard"
-        />
+        >
+          <img
+            className="flash-flag"
+            src={require("../imgs/002-united-kingdom.png")}
+            alt="uk flag"
+          />
+        </button>
       )}
 
       {showThai ? (
@@ -39,18 +44,25 @@ export const Flashcard = ({ phrases }) => {
           onClick={() => {
             setShowThai(!showThai);
           }}
-          value={phrases[randomNum].thai}
+          value={
+            phrases[randomNum].thai_script + " " + phrases[randomNum].thai_latin
+          }
           className="flashcard"
         />
       ) : (
-        <input
+        <button
           type="button"
           onClick={() => {
             setShowThai(!showThai);
           }}
-          value="Show Thai"
           className="flashcard"
-        />
+        >
+          <img
+            className="flash-flag"
+            src={require("../imgs/001-thailand.png")}
+            alt="thai flag"
+          />
+        </button>
       )}
 
       <button onClick={generateNumber} className="app-button">
